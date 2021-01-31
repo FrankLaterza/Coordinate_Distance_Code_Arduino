@@ -21,12 +21,37 @@
 
 
 void setup(){
+  Serial.begin(9600);
+  
   
 }
 
+
+// this loop is an example of you to use the function!!
 void loop(){
 
-  // run loop here
+  
+  //defining variables
+  float currentLat, currentLong; // vars for the current lat and long
+  float targetLat, targetLong;   // vars for the target  lat and long 
+  float distance;                // var for funtion output
+  
+  
+  
+  // the function
+  distance = distanceCoordinates(currentLat, currentLong, targetLat, targetLong);
+  //         ^^^^^^^^^^^^^^^  this function returns the distnace
+  
+  
+  // this should output the distance to the serial monitor.
+  Serial.println(distance);
+  
+  
+  
+  // THE LOOP WILL RUN EVER 5 SECONDS
+  delay(5000); // this pauses for 5 seconds
+  
+  
 
   
 
